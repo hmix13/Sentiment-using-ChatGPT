@@ -1,21 +1,15 @@
 import streamlit as st
 import openai
 
-# Get API key for OpenAI
-#secrets = openai_secret_manager.get_secrets("openai")
-openai.api_key = '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'
-
 # Use the OpenAI API to analyze the sentiment of text
 @st.cache(allow_output_mutation=True)
 def analyze_sentiment(prompt):
-    import openai
-    openai.api_key = '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'
+    openai.api_key = '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'
 
     completions = openai.Completion.create(
         engine="text-davinci-002",
         prompt=prompt,
         max_tokens=1024,
-        n=1,
         stop=None,
         temperature=0.5,
     )
